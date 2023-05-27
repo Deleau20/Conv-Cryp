@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Convertisseur de devises</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+  </head>
+  <body>
+    <h1>Convertisseur de devises cryptographiques</h1>
+    <form method="POST">
+      <label for="crypto_currency">Crypto-monnaie d'origine :</label>
+      <input type="text" id="crypto_currency" name="crypto_currency" required />
+      <label for="target_currency">Devise cible :</label>
+      <input type="text" id="target_currency" name="target_currency" required />
+      <label for="amount">Montant :</label>
+      <input type="number" id="amount" name="amount" step="0.01" required />
+      <button type="submit">Convertir</button>
+    </form>
+    <div id="result">
+      <% if (convertedAmount) { %>
+      <p>
+        <%= amount %> <%= cryptoCurrency %> équivaut à <%= convertedAmount %>
+        <%= targetCurrency %>
+      </p>
+      <% } %> <% if (error_message) { %>
+      <p class="error-message"><%= error_message %></p>
+      <% } %>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
